@@ -1,7 +1,7 @@
 const graphql = require('graphql')
 const _ = require('lodash')
 
-const { GraphQLObjecctType,GraphQLString,GraphQLSchema } = graphql;
+const { GraphQLObjectType,GraphQLString,GraphQLSchema } = graphql;
 
 var books = [
     { name: 'Name of the Wind', genre: 'Fantasy', id: '1' },
@@ -9,7 +9,7 @@ var books = [
     { name: 'The Long Earth', genre: 'Sci-Fi', id: '3' },
 ];
 
-const BookType = new GraphQLObjecctType({
+const BookType = new GraphQLObjectType({
     name : 'Book',
     fields : ()=>({
         id : { type : GraphQLString},
@@ -18,7 +18,7 @@ const BookType = new GraphQLObjecctType({
     })
 })
 
-const RootQuery = new GraphQLObjecctType({
+const RootQuery = new GraphQLObjectType({
     name : 'RootQueryType',
     fields:{
         book:{ 
