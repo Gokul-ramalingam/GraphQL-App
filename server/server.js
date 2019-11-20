@@ -4,10 +4,11 @@ const graphqlHTTP = require('express-graphql')
 const schema = require('./schema/schema')
 const url = require('./config/config').url;
 const app = express()
-
+const cors = require('cors')
 const port = process.env.PORT || 7000
 
 
+app.use(cors())
 
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true})
                     .then(()=>console.log("Connected to mongoDB successfully..."))
